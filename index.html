@@ -1,0 +1,532 @@
+<!-- =========================
+FILE : index.html
+Tema : Florist - LushPetals
+Pinterest Aesthetic Style
+========================= -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LushPetals | Florist</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#fffaf8;
+      color:#4d3b36;
+    }
+
+    /* NAVBAR */
+    nav{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 8%;
+      background:rgba(255,255,255,0.9);
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter: blur(8px);
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo{
+      font-family:'Cormorant Garamond', serif;
+      font-size:2rem;
+      font-weight:700;
+      color:#8b5e5e;
+    }
+
+    nav ul{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:#5b4742;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#d08b8b;
+    }
+
+    section{
+      padding:80px 8%;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h1{
+      font-family:'Cormorant Garamond', serif;
+      font-size:5rem;
+      line-height:1;
+      margin-bottom:20px;
+      color:#7a5555;
+    }
+
+    .hero-text p{
+      line-height:1.9;
+      font-size:1rem;
+      margin-bottom:25px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 30px;
+      background:#d7a6a6;
+      color:white;
+      border-radius:30px;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#bb8686;
+    }
+
+    .hero-img{
+      flex:1;
+      min-width:300px;
+      text-align:center;
+    }
+
+    .hero-img img{
+      width:100%;
+      max-width:450px;
+      border-radius:30px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    /* TITLE */
+    .title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .title h2{
+      font-family:'Cormorant Garamond', serif;
+      font-size:3rem;
+      color:#7a5555;
+      margin-bottom:10px;
+    }
+
+    .title p{
+      color:#7c6660;
+    }
+
+    /* ABOUT */
+    .about-container{
+      display:flex;
+      gap:40px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .about-img{
+      flex:1;
+      min-width:300px;
+    }
+
+    .about-img img{
+      width:100%;
+      border-radius:25px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .about-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .about-text h3{
+      font-size:2rem;
+      margin-bottom:15px;
+      color:#8b5e5e;
+    }
+
+    .about-text p{
+      line-height:1.9;
+      margin-bottom:18px;
+      text-align:justify;
+    }
+
+    .visi-misi{
+      background:#fff0f0;
+      padding:20px;
+      border-radius:20px;
+      margin-top:20px;
+    }
+
+    .visi-misi h4{
+      margin-bottom:10px;
+      color:#7a5555;
+    }
+
+    .visi-misi ul{
+      padding-left:20px;
+      line-height:1.8;
+    }
+
+    /* PRODUK */
+    .produk-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .card-content h3{
+      font-family:'Cormorant Garamond', serif;
+      font-size:2rem;
+      color:#7a5555;
+      margin-bottom:10px;
+    }
+
+    .card-content p{
+      font-size:0.95rem;
+      line-height:1.7;
+      margin-bottom:12px;
+    }
+
+    .price{
+      color:#c57d7d;
+      font-weight:bold;
+      font-size:1.1rem;
+    }
+
+    /* KONTAK */
+    .contact-box{
+      max-width:600px;
+      margin:auto;
+      background:white;
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    input, textarea{
+      padding:15px;
+      border:none;
+      border-radius:15px;
+      background:#f7eeee;
+      font-family:'Poppins';
+    }
+
+    button{
+      padding:15px;
+      border:none;
+      border-radius:30px;
+      background:#d7a6a6;
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#b98282;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#7d6b6b;
+      background:#fff0f0;
+      margin-top:50px;
+    }
+
+    @media(max-width:768px){
+      .hero-text h1{
+        font-size:3.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">Florist</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#produk">Produk</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+      <h1>Hello Gorgeous!</h1>
+
+      <p>
+        Produk kami merupakan bunga artificial dengan kualitas premium
+        yang dirancang menyerupai bunga asli secara detail.
+        Dengan material pilihan dan desain yang carefully crafted,
+        setiap rangkaian bunga mampu menghadirkan kesan hidup,
+        elegan, dan menenangkan.
+      </p>
+
+      <p>
+        Cocok digunakan untuk:
+        home decor, hadiah spesial, dekorasi acara,
+        hingga properti foto aesthetic ala Pinterest.
+      </p>
+
+      <p>
+        🌼 Long-lasting <br>
+        🌼 Low maintenance <br>
+        🌼 Aesthetic & elegant design <br>
+        🌼 Affordable but classy
+      </p>
+
+      <a href="#produk" class="btn">See Collection</a>
+    </div>
+
+    <div class="hero-img">
+      <img src="https://i.pinimg.com/736x/97/79/95/9779953a3a57cc5dbb4a1db8f1bb4cb3.jpg">
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="title">
+      <h2>About LushPetals</h2>
+      <p>Timeless Beauty, Effortless Elegance</p>
+    </div>
+
+    <div class="about-container">
+
+      <div class="about-img">
+        <img src="https://i.pinimg.com/736x/e8/12/99/e81299ff9d1d4cde06c2f60df72cb445.jpg">
+      </div>
+
+      <div class="about-text">
+
+        <h3>LushPetals</h3>
+
+        <p>
+          Di era modern seperti sekarang, kebutuhan akan estetika dan
+          keindahan menjadi bagian penting dalam kehidupan sehari-hari.
+          Dekorasi tidak hanya berfungsi sebagai pelengkap,
+          tetapi juga sebagai bentuk ekspresi diri dan lifestyle statement.
+        </p>
+
+        <p>
+          Artificial flower hadir sebagai solusi practical,
+          long-lasting, and aesthetically pleasing.
+          Produk ini cocok untuk dekorasi rumah, hadiah,
+          wedding, cafe, hingga studio foto.
+        </p>
+
+        <p>
+          Dengan meningkatnya tren home decor dan aesthetic lifestyle,
+          LushPetals hadir untuk memberikan pengalaman menikmati
+          keindahan bunga tanpa batas waktu.
+        </p>
+
+        <div class="visi-misi">
+
+          <h4>Visi</h4>
+          <p>
+            Menjadi brand artificial flower yang menghadirkan
+            keindahan abadi dengan sentuhan elegan dan modern.
+          </p>
+
+          <h4>Misi</h4>
+
+          <ul>
+            <li>Menyediakan bunga artificial high quality & realistic</li>
+            <li>Desain aesthetic, elegant, dan up to date</li>
+            <li>Solusi dekorasi praktis tanpa mengurangi keindahan</li>
+            <li>Customer satisfaction first</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUK -->
+  <section id="produk">
+
+    <div class="title">
+      <h2>Our Products</h2>
+      <p>Beautiful flowers for every special moment</p>
+    </div>
+
+    <div class="produk-container">
+
+      <!-- CARD 1 -->
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/18/79/61/1879615a9d79e1f52af8dc9b19fcb0d7.jpg">
+
+        <div class="card-content">
+          <h3>Bouquet Artificial</h3>
+
+          <p>
+            Buket bunga artificial dengan wrapping paper aesthetic
+            dan pita cantik. Cocok untuk hadiah dan dekorasi.
+          </p>
+
+          <div class="price">Rp. 75.000</div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/72/73/5b/72735b00e7ecb594fcf2f89dc4f3fa84.jpg">
+
+        <div class="card-content">
+          <h3>Flower Vase</h3>
+
+          <p>
+            Bunga artificial yang dirangkai dalam vas premium
+            dengan desain minimalis dan aesthetic.
+          </p>
+
+          <div class="price">Rp. 19.200</div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/89/c9/c5/89c9c55d89f1fcb6f9a4fc8c8a76d7db.jpg">
+
+        <div class="card-content">
+          <h3>Flower Box</h3>
+
+          <p>
+            Bunga artificial dalam box elegan berbentuk love
+            atau square. Sangat cocok untuk special gift.
+          </p>
+
+          <div class="price">Rp. 240.000</div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak">
+
+    <div class="title">
+      <h2>Contact Us</h2>
+      <p>Send your message beautifully</p>
+    </div>
+
+    <div class="contact-box">
+
+      <form onsubmit="showData(event)">
+        <input type="text" id="nama" placeholder="Nama" required>
+        <input type="email" id="email" placeholder="Email" required>
+
+        <textarea rows="5" placeholder="Pesan"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <div id="hasil" style="margin-top:20px;"></div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 LushPetals — Timeless Beauty, Effortless Elegance
+  </footer>
+
+  <script>
+    function showData(e){
+      e.preventDefault();
+
+      let nama = document.getElementById("nama").value;
+      let email = document.getElementById("email").value;
+
+      document.getElementById("hasil").innerHTML = `
+        <div style="
+          background:#fff0f0;
+          padding:20px;
+          border-radius:15px;
+          margin-top:20px;
+        ">
+          <h3 style="margin-bottom:10px;color:#7a5555;">
+            Data Berhasil Dikirim 🌸
+          </h3>
+
+          <p><b>Nama :</b> ${nama}</p>
+          <p><b>Email :</b> ${email}</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
